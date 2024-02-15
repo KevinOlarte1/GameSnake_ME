@@ -3,7 +3,6 @@ package lib;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-import org.checkerframework.checker.units.qual.s;
 
 import java.awt.Color;
 
@@ -12,15 +11,16 @@ public class Map {
     private final int height;
     private final int[][] map;
     
-    ArrayList<String> emptyPosition = new ArrayList<>();
     
-    private static final java.util.Scanner scanner = new java.util.Scanner(System.in);
+
     //Variable for print the map
     private final int widthBlock = 30;
     private final int heightBlock = 30;
     private final int movimentBlock = 30;
 
+    //Variables necesary for the funtion of the apple
     private int apples = 0;
+    ArrayList<String> emptyPosition = new ArrayList<>();
 
     public Map(int width, int height) {
         this.width = width;
@@ -54,7 +54,7 @@ public class Map {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[0].length; j++) {
                 if (map[i][j] == 1) {
-                    g.setColor(Color.BLUE);
+                    g.setColor(new Color(3, 79, 165));
                     g.fillRect(j*movimentBlock, i*movimentBlock, widthBlock, heightBlock);
                     g.setColor(new Color(255,255,255));
                     g.drawRect(j*movimentBlock, i*movimentBlock, widthBlock, heightBlock);
@@ -71,7 +71,7 @@ public class Map {
                     if (emptyPosition.indexOf(i + "," + j) == -1) {
                         emptyPosition.add(i + "," + j);
                     }
-                    g.setColor(new Color(64,64,64));
+                    g.setColor(new Color(60,165,3));
                     g.fillRect(j*movimentBlock, i*movimentBlock, widthBlock, heightBlock);
                     g.setColor(new Color(255,255,255));
                     g.drawRect(j*movimentBlock, i*movimentBlock, widthBlock, heightBlock);
