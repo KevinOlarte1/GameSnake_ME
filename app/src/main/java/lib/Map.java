@@ -40,6 +40,9 @@ public class Map {
                 } else {
                     map[i][j] = 0;
                     emptyPosition.add( i + "," + j);
+                    
+                    
+
                 }
             }
         }
@@ -105,12 +108,15 @@ public class Map {
             //System.out.println("lastPositionX: " + lastPositionX + " lastPositionY: " + lastPositionY);
             //scanner.nextLine();
             
-            if (apples < 1) {
-                //Metodo que devuelve la posicion de la aparicion de la manzana
-                String posManzana = apple.appear(emptyPosition);
-                apples++;
-                map[Integer.parseInt(posManzana.substring(0, posManzana.indexOf(",")))][Integer.parseInt(posManzana.substring(posManzana.indexOf(",") +1, posManzana.length()))] = 3;
-            }
+        //Only appear one apple in the map.
+        if (apples < 1) {
+            //Method that return the position of the apple
+            String posManzana = apple.appear(emptyPosition);
+            apples++;
+            map[Integer.parseInt(posManzana.substring(0, posManzana.indexOf(",")))][Integer.parseInt(posManzana.substring(posManzana.indexOf(",") +1, posManzana.length()))] = 3;
+        }
+
+        //Update the snake in the map.
         for  (int i = 0; i < size; i++) {
             if(map[y[i]][x[i]] == 3){
                 apples--;

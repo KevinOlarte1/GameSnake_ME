@@ -85,11 +85,6 @@ public class Snake {
         }
         
         // Crafting a new array for the optimization the snake.
-        //Be cerful with problems in finish, if the snake eat his tail.
-             //int[] newArrayx = new int[bodyx.length];
-             //int[] newArrayy = new int[bodyx.length];ad
-            // newArrayx[0] = x;
-            //newArrayy[0] = y;
         System.arraycopy(bodyx, 0, bodyx, 1, bodyx.length - 1); 
         System.arraycopy(bodyy, 0, bodyy, 1, bodyy.length - 1);
         bodyx [0] = x;
@@ -114,7 +109,7 @@ public class Snake {
     }
 
     /**
-     * Method por detect if the game is over or win or continue.
+     * Method for detect if the game is over or win or continue.
      * @param map map of the game.
      * @return 1 if the game is over, 2 if the game is win, 0 if the game continue.
      */
